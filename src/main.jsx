@@ -11,6 +11,7 @@ import {
 import Main from './layout/Main.jsx';
 import Home from './component/Home/Home.jsx';
 import Blog from './component/Blog/Blog.jsx';
+import ChefRecipePage from './component/ChefRecipePage/ChefRecipePage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path:'blog',
         element:<Blog></Blog>
+      },
+      {
+        path:'/allData/:id',
+        element:<ChefRecipePage></ChefRecipePage>
       }
     ]
   },
