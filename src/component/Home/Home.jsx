@@ -43,6 +43,7 @@ const Home = () => {
            {/* card section ends */}
 
            {/* review section start */}
+           
            {/* review section ends */}
             
         </div>
