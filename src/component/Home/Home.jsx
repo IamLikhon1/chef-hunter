@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import Review from '../Review/Review';
+import CardShow from '../CardShow/CardShow';
 
 const Home = () => {
+    const [cards, setCards]=useState([]);
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/allData')
+        .then(res=>res.json())
+        .then(data=>setCards(data))
+        .catch(error=>console.error(error))
+    },[])
    
     return (
         <div>
@@ -33,19 +42,31 @@ const Home = () => {
               </div>
 
               <div className='text-center mt-4 ps-3'>
-                <h4 className='text-secondary'>“Since I was a kid I was Massimo Bottura — I was escaping from my older brother under the table in the kitchen and from down there, where my grandmother was defending me, in the meantime she was rolling pasta, i was looking at the world from another point of view. It’s what we do in Osteria Francescana every day.”</h4> <br />
+                <h4 className='text-black'>“Since I was a kid I was Massimo Bottura — I was escaping from my older brother under the table in the kitchen and from down there, where my grandmother was defending me, in the meantime she was rolling pasta, i was looking at the world from another point of view. It’s what we do in Osteria Francescana every day.”</h4> <br />
                 <p className='text-secondary fw-bold'>Massimo Bottura</p>
               </div>
            {/* Welcome ends */}
 
            {/* card section start */}
-
+          <div className='mt-5   '>
+          <h2 className='text-center fw-semibold text-secondary mt-3'>OUR BEST CHEF'S</h2>
+            {
+                cards.map(allCard=><CardShow
+                allCard={allCard}
+                key={allCard.id}
+                ></CardShow>)
+            }
+          </div>
 
            {/* card section ends */}
 
+
+
            {/* review section start */}
 
-          <Review></Review>
+         <div className='mt-5'>
+         <Review></Review>
+         </div>
     
            {/* review section ends */}
             
