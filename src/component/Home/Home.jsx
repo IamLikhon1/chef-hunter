@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import Review from '../Review/Review';
 import CardShow from '../CardShow/CardShow';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Home = () => {
     const [cards, setCards]=useState([]);
+   
 
     useEffect(()=>{
         fetch('http://localhost:5000/allData')

@@ -9,12 +9,15 @@ const AuthProvider = ({children}) => {
     const [loading, setLoading]=useState(true)
 
     const createUser=(email,password)=>{
+        setLoading(true)
        return createUserWithEmailAndPassword(auth,email,password)
     }
     const userLogIn=(email,password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
     const userLogOut=()=>{
+        setLoading(true)
         return signOut(auth)
     }
     useEffect(()=>{
@@ -33,7 +36,8 @@ const AuthProvider = ({children}) => {
         createUser,
         userLogIn,
         auth,
-        userLogOut
+        userLogOut,
+        loading
     }
 
     return (

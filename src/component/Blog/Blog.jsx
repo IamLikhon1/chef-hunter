@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../provider/AuthProvider';
+import { Spinner } from 'react-bootstrap';
 
 const Blog = () => {
+    const{loading}=useContext(AuthContext)
+    if(loading){
+        return <Spinner animation="border" variant="warning" />
+    }
     return (
         <div>
            <h2 className='text-center fw-bold '>Answer to the question:</h2>
