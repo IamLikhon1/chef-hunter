@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
+import Review from '../Review/Review';
 
 const Home = () => {
    
@@ -43,7 +44,9 @@ const Home = () => {
            {/* card section ends */}
 
            {/* review section start */}
-           
+
+          <Review></Review>
+    
            {/* review section ends */}
             
         </div>
