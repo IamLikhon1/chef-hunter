@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-        <Container >
+        <Navbar className='sticky-top ' collapseOnSelect expand="lg" bg="light" variant="light">
+        <Container className='p-2' >
                  <h4><Link className='text-decoration-none fw-semibold' to='/'>American <span className='text-warning'>Chef's</span> </Link></h4>  
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">

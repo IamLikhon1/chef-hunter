@@ -9,7 +9,7 @@ const CardShow = ({allCard}) => {
         <Container>
           <div className='container'>
            <Row className=" mt-3">
-          <Card className='p-4 d-flex' >
+          <Card className='p-4 w-75 d-flex' >
             <Card.Img variant="top" className='w-25 fluid ' src={imgChef}  />
             <div>
             <Card.Body>
@@ -21,7 +21,7 @@ const CardShow = ({allCard}) => {
               </Card.Text>
             </Card.Body>
             </div>
-           <Link to={`/allData/${id}`}> <button className='btn btn-warning p-3 fw-bold text-white'>View Recipes Button</button></Link>
+           <Link to={`/allData/${id}`}> <button className='btn btn-warning p-3 fw-bold text-white'>View Recipes</button></Link>
           </Card>
     </Row>
         </div>
