@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-        <Container>
+        <Container >
                  <h4><Link className='text-decoration-none fw-semibold' to='/'>American <span className='text-warning'>Chef's</span> </Link></h4>  
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mx-auto">
+           
+            <Nav  className="mx-auto">
 
               
              <div className='d-flex align-items-center justify-content-center'>
@@ -18,7 +19,7 @@ const Header = () => {
              </div>
               
 
-             
+
             </Nav>
             <Nav>
              <button className='btn btn-primary'>Login</button>
