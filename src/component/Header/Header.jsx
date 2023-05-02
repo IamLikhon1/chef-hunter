@@ -22,7 +22,7 @@ const Header = () => {
 
             </Nav>
             <Nav>
-             <button className='btn btn-primary'>Login</button>
+             <Link to='/login'><button className='btn btn-primary'>Login</button></Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

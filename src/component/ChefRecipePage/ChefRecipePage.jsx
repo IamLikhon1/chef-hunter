@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Card, Container } from 'react-bootstrap';
 import Marquee from 'react-fast-marquee';
 import { FaStar, FaThumbsUp } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import toast from 'react-hot-toast';
+
 
 const ChefRecipePage = () => {
+    const [button, setButton]=useState(false)
+    const [button1, setButton1]=useState(false)
+    const [button2, setButton2]=useState(false)
     const allCard=useLoaderData()
     // console.log(data)
-    const {imgChef,name,experience,likes,recipes,id,bio}=allCard
+    const {imgChef,name,experience,likes,recipes,id,bio}=allCard;
+
+    const btnFavorite=()=>{
+        setButton(true)
+        toast.success('Add Favorite Recipe')
+    }
+    const btnFavorite1=()=>{
+        setButton1(true)
+        toast.success('Add Favorite Recipe')
+    }
+    const btnFavorite2=()=>{
+        setButton2(true)
+        toast.success('Add Favorite Recipe')
+    }
     return (
         
           <div>
@@ -41,7 +59,7 @@ const ChefRecipePage = () => {
         {/* recipes section */}
 
         <Container className='d-flex align-items-center justify-content-center mt-5 '>
-       <Marquee pauseOnHover={false} >
+       <Marquee speed={100} pauseOnHover={true}>
        <Card className='me-5' style={{ width: '20rem' }}>
       <Card.Body>
         <Card.Title> Recipe Name: {recipes.first.name}</Card.Title>
@@ -58,7 +76,7 @@ const ChefRecipePage = () => {
                
                 <p className='fw-semibold'>Rating: <span className='text-warning'>{recipes.first.rating}</span></p>
                 </Card.Text>
-                <Button className='w-50 text-white ' variant="warning">Favorite</Button>
+                <Button onClick={btnFavorite} disabled={button} className='w-50 text-white ' variant="warning">Favorite</Button>
             </Card.Body>
             </Card>
 
@@ -77,7 +95,7 @@ const ChefRecipePage = () => {
                 <p className='fw-semibold'>Cooking Method: {recipes.second.method}</p>
                 <p className='fw-semibold'>Rating: <span className='text-warning'> {recipes.second.rating}</span></p>
                 </Card.Text>
-                <Button className='w-50 text-white'  variant="warning">Favorite</Button>
+                <Button onClick={btnFavorite1} disabled={button1}  className='w-50 text-white'  variant="warning">Favorite</Button>
             </Card.Body>
             </Card>
 
@@ -96,7 +114,7 @@ const ChefRecipePage = () => {
                 <p className='fw-semibold'>Cooking Method: {recipes.third.method}</p>
                 <p className='fw-semibold'>Rating:  <span className='text-warning'> {recipes.third.rating}</span></p> 
                 </Card.Text>
-                <Button className='w-50 text-white'  variant="warning">Favorite</Button>
+                <Button onClick={btnFavorite2} disabled={button2}  className='w-50 text-white'  variant="warning">Favorite</Button>
             </Card.Body>
             </Card>
 

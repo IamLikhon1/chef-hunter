@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../component/Header/Header';
 import { Outlet } from 'react-router-dom';
 import Footer from '../component/Footer/Footer';
+import  { Toaster } from 'react-hot-toast';
 
 const Main = () => {
     return (
@@ -10,6 +11,7 @@ const Main = () => {
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
+            <Toaster></Toaster>
 
             
         </div>
