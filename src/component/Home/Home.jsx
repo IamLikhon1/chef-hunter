@@ -9,7 +9,7 @@ const Home = () => {
    
 
     useEffect(()=>{
-        fetch('http://localhost:5000/allData')
+        fetch('https://the-chef-server-iamlikhon1.vercel.app/allData')
         .then(res=>res.json())
         .then(data=>setCards(data))
         .catch(error=>console.error(error))
