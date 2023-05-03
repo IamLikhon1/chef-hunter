@@ -6,9 +6,9 @@ const CardShow = ({allCard}) => {
     // console.log(allCard)
     const {imgChef,name,experience,likes,recipes,id}=allCard
     return (
-        <Container>
+        <Container className=''>
           <div className='container'>
-           <Row className=" mt-3">
+           <Row className="mt-4 ">
           <Card className='p-4 w-75 d-flex' >
             <Card.Img variant="top" className='w-25 fluid ' src={imgChef}  />
             <div>

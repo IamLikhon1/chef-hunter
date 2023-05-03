@@ -1,5 +1,5 @@
 import React, {  useEffect, useState } from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 import Review from '../Review/Review';
 import CardShow from '../CardShow/CardShow';
 import { AuthContext } from '../../provider/AuthProvider';
@@ -18,8 +18,28 @@ const Home = () => {
     return (
         <div>
            {/* banner section start */}
+           
+            
+                
+           <Container>
+           <Row className='d-flex align-items-center'>
+              <Col lg={6} sm>
+                <img className='w-100' src="https://img.freepik.com/free-vector/linear-flat-chef-logo-collection_23-2148985189.jpg?w=740&t=st=1683089342~exp=1683089942~hmac=3f0f00831c7ae3c25c56d859eb8a7970d2be8cad32a85c13114897a0c266903f" alt="" />
+              </Col>
+
+
+              <Col lg={6} sm>
+                <h1 className='text-secondary fw-semibold mt-5 '>Traditional & Modern Service Since <span className='text-info'>1995</span></h1>
+                <p className='mt-4 fw-semibold '>Ut neque turpis dolor sit amet consectetur adipiscing elit purus egestas diam sit vitae egestas suspendisse amet ultricies eu. Eget at porttitor morbi blandit ac vitae, dolor. Gravida eu vel ac luctus. Hac a vel est malesuada tellus sed nunc, etiam maecenas.</p>
+
+                <Button className='mt-3 p-3 rounded fw-bold' variant="outline-secondary">Read More</Button>
+              </Col>
+              
+            </Row>
+           </Container>
           
-           <Image  className='w-100 mt-5' src="https://img.freepik.com/free-photo/life-style_1122-1996.jpg?w=740&t=st=1682997985~exp=1682998585~hmac=f7f2720169ddbe40831e324a38257e6cd3d6ab143c1bca3506c5337870ab2180" fluid />;
+            
+          
           
            {/* banner section ends */}
 
@@ -50,7 +70,7 @@ const Home = () => {
            {/* Welcome ends */}
 
            {/* card section start */}
-          <div className='mt-5   '>
+          <div className='mt-5 '>
           <h2 className='text-center fw-semibold text-secondary mt-3'>OUR BEST CHEF'S</h2>
             {
                 cards.map(allCard=><CardShow

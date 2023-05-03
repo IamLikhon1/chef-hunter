@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
   const {user,userLogOut}=useContext(AuthContext);
@@ -26,16 +27,24 @@ const Header = () => {
 
               
              <div className='d-flex align-items-center justify-content-center'>
-             <h5><Link className='text-decoration-none ms-4 fw-semibold' to='/'>Home</Link></h5>
-              <h5><Link className='text-decoration-none ms-4 fw-semibold' to='/blog'>Blog</Link></h5>
+             <h5><Link to='/' className='text-decoration-none ms-4 fw-semibold' >Home</Link></h5>
+
+              <h5><Link to='/blog' className='text-decoration-none ms-4 fw-semibold' >Blog</Link></h5>
              </div>
+             {/* <p><img src={user?.photoURL} alt="" /></p> */}
+
+          <div className='ms-5'>
+          {   user?
+          <p><img  className='' style={{width:'50px',height:"50px",borderRadius:"100%"}} src={user?.photoURL} alt="" /></p>:<></>
+          }
+          </div>
               
 
 
             </Nav>
             <Nav>
             {
-              user?<><button onClick={logoutHandle} className='btn btn-info p-2 rounded text-white fe-semibold '>Logout</button></>:<> <Link to='/login'><button className='btn btn-primary p-2 '>Login</button></Link></>
+              user?<><button onClick={logoutHandle} className='btn btn-info p-2  rounded text-white fe-semibold'style={{width:"120px"}}>Logout</button></>:<> <Link to='/login'><button className='btn btn-primary p-2 rounded text-white fe-semibold  'style={{width:"120px"}}>Login</button></Link></>
             }
             </Nav>
           </Navbar.Collapse>
