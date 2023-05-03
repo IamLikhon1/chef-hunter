@@ -72,12 +72,14 @@ const Home = () => {
            {/* card section start */}
           <div className='mt-5 '>
           <h2 className='text-center fw-semibold text-secondary mt-3'>OUR BEST CHEF'S</h2>
+            <Row className='ms-5'>
             {
                 cards.map(allCard=><CardShow
                 allCard={allCard}
                 key={allCard.id}
                 ></CardShow>)
             }
+            </Row>
           </div>
 
            {/* card section ends */}

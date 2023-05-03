@@ -2,13 +2,15 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import { Spinner } from 'react-bootstrap';
 
+
 const Blog = () => {
     const{loading}=useContext(AuthContext)
     if(loading){
         return <Spinner animation="border" variant="warning" />
+
     }
     return (
-        <div>
+        <div className='p-5'>
            <h2 className='text-center fw-bold '>Answer to the question:</h2>
 
            <h4 className='bg-warning fw-semibold p-1'>1.Tell us the differences between uncontrolled and controlled components.</h4>

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
+import { Container, Nav, NavDropdown, Navbar, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import ActiveLink from '../ActiveLink/ActiveLink';
@@ -27,16 +27,18 @@ const Header = () => {
 
               
              <div className='d-flex align-items-center justify-content-center'>
-             <h5><Link to='/' className='text-decoration-none ms-4 fw-semibold' >Home</Link></h5>
 
-              <h5><Link to='/blog' className='text-decoration-none ms-4 fw-semibold' >Blog</Link></h5>
+             <h5><ActiveLink to='/'>Home</ActiveLink></h5>
+
+              <h5><ActiveLink to='/blog'>Blog</ActiveLink></h5>
              </div>
-             {/* <p><img src={user?.photoURL} alt="" /></p> */}
 
           <div className='ms-5'>
+
           {   user?
           <p><img  className='' style={{width:'50px',height:"50px",borderRadius:"100%"}} src={user?.photoURL} alt="" /></p>:<></>
           }
+
           </div>
               
 

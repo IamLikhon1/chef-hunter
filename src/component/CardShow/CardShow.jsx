@@ -6,11 +6,10 @@ const CardShow = ({allCard}) => {
     // console.log(allCard)
     const {imgChef,name,experience,likes,recipes,id}=allCard
     return (
-        <Container className=''>
-          <div className='container'>
-           <Row className="mt-4 ">
-          <Card className='p-4 w-75 d-flex' >
-            <Card.Img variant="top" className='w-25 fluid ' src={imgChef}  />
+         
+       <Col className='mt-5' lg={4}>
+          <Card className='p-4 w-75 ' >
+            <Card.Img variant="top" className='w-50 fluid ' src={imgChef}  />
             <div>
             <Card.Body>
               <h4><Card.Title>Chef Name: {name}</Card.Title></h4>
@@ -23,9 +22,9 @@ const CardShow = ({allCard}) => {
             </div>
            <Link to={`/allData/${id}`}> <button className='btn btn-warning p-3 fw-bold text-white'>View Recipes</button></Link>
           </Card>
-    </Row>
-        </div>
-        </Container>
+    
+       </Col>
+        
     );
 };
 
