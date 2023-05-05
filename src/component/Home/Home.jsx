@@ -4,6 +4,7 @@ import Review from '../Review/Review';
 import CardShow from '../CardShow/CardShow';
 import { AuthContext } from '../../provider/AuthProvider';
 
+
 const Home = () => {
     const [cards, setCards]=useState([]);
    
@@ -24,7 +25,7 @@ const Home = () => {
            <Container>
            <Row className='d-flex align-items-center'>
               <Col lg={6} sm>
-                <img className='w-100' src="https://img.freepik.com/free-vector/linear-flat-chef-logo-collection_23-2148985189.jpg?w=740&t=st=1683089342~exp=1683089942~hmac=3f0f00831c7ae3c25c56d859eb8a7970d2be8cad32a85c13114897a0c266903f" alt="" />
+               <img className='w-100' src="https://img.freepik.com/free-vector/linear-flat-chef-logo-collection_23-2148985189.jpg?w=740&t=st=1683089342~exp=1683089942~hmac=3f0f00831c7ae3c25c56d859eb8a7970d2be8cad32a85c13114897a0c266903f" alt="" />
               </Col>
 
 

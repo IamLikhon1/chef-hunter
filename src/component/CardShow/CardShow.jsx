@@ -1,15 +1,16 @@
 import React from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import {  Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
 
 const CardShow = ({allCard}) => {
-    // console.log(allCard)
+   
     const {imgChef,name,experience,likes,recipes,id}=allCard
     return (
          
        <Col className='mt-5' lg={4}>
           <Card className='p-4 w-75 ' >
-            <Card.Img variant="top" className='w-50 fluid ' src={imgChef}  />
+            <LazyLoad><Card.Img variant="top" className='w-50 fluid ' src={imgChef}  /></LazyLoad>
             <div>
             <Card.Body>
               <h4><Card.Title>Chef Name: {name}</Card.Title></h4>
