@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { toast } from 'react-hot-toast';
@@ -37,9 +37,17 @@ const Register = () => {
     }
     
     return (
-        <div  className='w-25 mx-auto border mt-5 shadow-lg p-4   mb-5 bg-white rounded'>
-            
-            <Form onSubmit={handleRegister}>
+        <div>
+
+            <Container>
+                <Row className='d-flex justify-content-between align-items-center'>
+                    <Col lg={6} sm>
+                        <img className='w-100' src='https://img.freepik.com/free-vector/access-control-system-abstract-concept_335657-3180.jpg?w=740&t=st=1683619656~exp=1683620256~hmac=351c3a01b133845548eb9af977ea0ecca9f6e11b7478819933ea9172dcf6a13f' alt="" />
+                    </Col>
+
+                    <Col lg={6}sm>
+
+                    <Form className='w-50' onSubmit={handleRegister}>
                 <h3 className='text-center text-warning'>Register</h3>
                 
                     <Form.Label>Name</Form.Label>
@@ -71,6 +79,11 @@ const Register = () => {
                 <p className='mt-3'><small>Already Have Account ? Go TO <Link className='text-decoration-none text-warning fw-bold' to='/login'>Login</Link></small></p>
             </Form>
             
+                    </Col>
+                </Row>
+            </Container>
+            
+           
         </div>
     );
 };
